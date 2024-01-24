@@ -74,7 +74,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get("http://127.0.0.1:8000/api/mahasiswa")
+        .get("https://ecowatchk10.000webhostapp.com/api/mahasiswa")
         .then((response) => {
           mahasiswa.value = response.data.data;
         })
