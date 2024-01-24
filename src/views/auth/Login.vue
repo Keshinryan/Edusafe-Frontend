@@ -65,7 +65,7 @@ export default {
       let name = Login.name;
       let password = Login.password;
       axios
-        .post("http://127.0.0.1:8000/api/login", {
+        .post("https://ecowatchk10.000webhostapp.com/api/login", {
           name: name,
           password: password,
         })
