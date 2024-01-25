@@ -87,7 +87,7 @@ export default {
       formData.append("foto", foto);
       console.log(foto);
       axios
-        .post(`http://localhost:8000/api/file/${route.params.id}`, formData, {
+        .post(`https://ecowatchk10.000webhostapp.com/api/file/${route.params.id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
