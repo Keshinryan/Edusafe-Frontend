@@ -115,7 +115,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get(`http://127.0.0.1:8000/api/kaprodi/${route.params.id}`)
+        .get(`https://ecowatchk10.000webhostapp.com/api/kaprodi/${route.params.id}`)
         .then((response) => {
           kaprodi.name = response.data.data.name_k;
           kaprodi.nip = response.data.data.nip;
@@ -134,7 +134,7 @@ export default {
       let prodi = kaprodi.prodi;
       let NOHP = kaprodi.NOHP;
       axios
-        .put(`http://127.0.0.1:8000/api/kaprodi/${route.params.id}`, {
+        .put(`https://ecowatchk10.000webhostapp.com/api/kaprodi/${route.params.id}`, {
           name_k: name,
           password: password,
           nip: nip,

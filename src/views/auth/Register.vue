@@ -139,11 +139,7 @@ export default {
       let role= Register.role;
 
       axios
-<<<<<<< HEAD
         .post("https://ecowatchk10.000webhostapp.com/api/register", {
-=======
-        .post("http://localhost:8000/api/register", {
->>>>>>> origin/test
           name: name,
           password:password,
           name_m:name,

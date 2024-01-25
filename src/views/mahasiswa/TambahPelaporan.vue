@@ -83,11 +83,7 @@ export default {
             formData.append('bukti', bukti);
             formData.append('id_m', user.value.id);
             axios
-<<<<<<< HEAD
                 .post("https://ecowatchk10.000webhostapp.com/api/pelaporan", formData, {
-=======
-                .post("http://localhost:8000/api/pelaporan", formData, {
->>>>>>> origin/test
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

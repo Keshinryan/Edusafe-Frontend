@@ -64,21 +64,13 @@ export default {
     function Auth() {
       let name = Login.name;
       let password = Login.password;
-<<<<<<< HEAD
       let formData = new FormData();
       formData.append('name', name);
       formData.append('password', password);
       axios
-        .post("http://127.0.0.1:8000/api/login", formData,{headers: {
+        .post("https://ecowatchk10.000webhostapp.com/api/login", formData,{headers: {
                         'Content-Type': 'multipart/form-data'
           }})
-=======
-      axios
-        .post("https://ecowatchk10.000webhostapp.com/api/login", {
-          name: name,
-          password: password,
-        })
->>>>>>> origin/test
         .then((response) => {
           if (response.data.data) {
             sessionStorage.setItem("user", JSON.stringify(response.data.data));

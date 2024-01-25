@@ -75,7 +75,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get("http://127.0.0.1:8000/api/pelaporan")
+        .get("https://ecowatchk10.000webhostapp.com/api/pelaporan")
         .then((response) => {
           pelaporanData.value = response.data.data;
           mahasiswaData.value = response.data.mahasiswa;
@@ -90,7 +90,7 @@ export default {
       let status = "dalam proses";
       let idp = pelaporanData.value.find((item) => item.bukti === bukti).id;
       axios
-        .put(`http://127.0.0.1:8000/api/pelaporan/${idp}`, {
+        .put(`https://ecowatchk10.000webhostapp.com/api/pelaporan/${idp}`, {
           status: status,
         })
         .then(() => {
@@ -101,7 +101,7 @@ export default {
         });
     }
     function getFileUrl(filename) {
-      return `http://127.0.0.1:8000/api/file/${filename}/bukti`;
+      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/bukti`;
     }
     const mergedData = computed(() => {
       return pelaporanData.value.map((pelaporan) => {

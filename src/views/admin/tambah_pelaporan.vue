@@ -133,7 +133,7 @@ export default {
       let bukti = pelaporan.bukti;
 
       axios
-        .post("http://127.0.0.1:8000/api/pelaporan", {
+        .post("https://ecowatchk10.000webhostapp.com/api/pelaporan", {
           tanggal: tanggal,
           waktu: waktu,
           tempat: tempat,

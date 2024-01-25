@@ -132,7 +132,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get(`http://127.0.0.1:8000/api/mahasiswa/${route.params.id}`)
+        .get(`https://ecowatchk10.000webhostapp.com/api/mahasiswa/${route.params.id}`)
         .then((response) => {
           mahasiswa.name = response.data.data.name_m;
           mahasiswa.nim = response.data.data.nim;
@@ -153,7 +153,7 @@ export default {
       let alamat = mahasiswa.alamat;
       let NOHP = mahasiswa.NOHP;
       axios
-        .put(`http://127.0.0.1:8000/api/mahasiswa/${route.params.id}`, {
+        .put(`https://ecowatchk10.000webhostapp.com/api/mahasiswa/${route.params.id}`, {
           name_m: name,
           password: password,
           nim: nim,

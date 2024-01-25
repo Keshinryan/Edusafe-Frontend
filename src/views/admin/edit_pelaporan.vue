@@ -63,7 +63,7 @@
 
       onMounted(() => {
   
-  axios.get(`http://127.0.0.1:8000/api/post/${route.params.id}`)
+  axios.get(`https://ecowatchk10.000webhostapp.com/api/post/${route.params.id}`)
     .then(response => {
       pelaporan.tanggal = response.data.data.tanggal
       pelaporan.waktu = response.data.data.waktu
@@ -82,7 +82,7 @@ function update() {
   let tempat = pelaporan.tempat;
   let deskripsi = pelaporan.deskripsi;
   let bukti = pelaporan.bukti;
-  axios.put(`http://127.0.0.1:8000/api/post/${route.params.id}`, {
+  axios.put(`https://ecowatchk10.000webhostapp.com/api/post/${route.params.id}`, {
     tanggal: tanggal,
     waktu: waktu,
     tempat: tempat,

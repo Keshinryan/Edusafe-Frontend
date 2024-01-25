@@ -94,7 +94,7 @@ export default {
       formData.append("isi", isi);
       formData.append("foto", foto);
       axios
-        .post("http://localhost:8000/api/edukasi", formData, {
+        .post("https://ecowatchk10.000webhostapp.com/api/edukasi", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

@@ -72,7 +72,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get("http://127.0.0.1:8000/api/kaprodi")
+        .get("https://ecowatchk10.000webhostapp.com/api/kaprodi")
         .then((response) => {
           kaprodi.value = response.data.kaprodi;
         })
@@ -83,7 +83,7 @@ export default {
 
     function kaprodiDelete(id,index) {
       axios
-        .delete(`http://127.0.0.1:8000/api/kaprodi/${id}`)
+        .delete(`https://ecowatchk10.000webhostapp.com/api/kaprodi/${id}`)
         .then(() => {
           kaprodi.value.splice(index, 1);
         })
