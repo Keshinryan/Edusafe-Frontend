@@ -123,7 +123,7 @@ export default {
       let NOHP = kaprodi.NOHP;
 
       axios
-        .post("https://ecowatchk10.000webhostapp.com/api/kaprodi", {
+        .post("http://localhost:8000/api/kaprodi", {
           name_k: name,
           password: password,
           role:role,

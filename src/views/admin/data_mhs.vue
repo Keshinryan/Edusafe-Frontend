@@ -84,7 +84,7 @@ export default {
     });
     function mahasiswaDelete(id,index) {
       axios
-        .delete(`https://ecowatchk10.000webhostapp.com/api/mahasiswa/${id}`)
+        .delete(`http://127.0.0.1:8000/api/mahasiswa/${id}`)
         .then(() => {
           mahasiswa.value.splice(index, 1);
         })

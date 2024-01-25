@@ -61,7 +61,7 @@ export default {
     const edukasi = ref([]);
     onMounted(() => {
       axios
-        .get("https://ecowatchk10.000webhostapp.com/api/edukasi")
+        .get("http://127.0.0.1:8000/api/edukasi")
         .then((response) => {
           edukasi.value = response.data.data;
         })
@@ -70,7 +70,7 @@ export default {
         });
     });
     function getFileUrl(filename) {
-      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/foto`;
+      return `http://127.0.0.1:8000/api/file/${filename}/foto`;
     }
 
     return {

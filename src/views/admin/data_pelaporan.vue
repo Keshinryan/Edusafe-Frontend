@@ -53,7 +53,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get("https://ecowatchk10.000webhostapp.com/api/pelaporan")
+        .get("http://127.0.0.1:8000/api/pelaporan")
         .then((response) => {
           pelaporanData.value = response.data.data;
           mahasiswaData.value = response.data.mahasiswa;
@@ -64,7 +64,7 @@ export default {
     });
 
     function getFileUrl(filename){
-      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/bukti`;
+      return `http://127.0.0.1:8000/api/file/${filename}/bukti`;
     }
     const mergedData = computed(() => {
       return pelaporanData.value.map((pelaporan) => {

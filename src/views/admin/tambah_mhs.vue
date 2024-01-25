@@ -141,7 +141,7 @@ export default {
       let NOHP = mahasiswa.NOHP;
 
       axios
-        .post("https://ecowatchk10.000webhostapp.com/api/mahasiswa", {
+        .post("http://localhost:8000/api/mahasiswa", {
           name_m: name,
           password: password,
           role:role,

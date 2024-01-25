@@ -137,20 +137,22 @@ export default {
       let alamat = Register.alamat;
       let NOHP = Register.NOHP;
       let role= Register.role;
-      let formData = new FormData();
-      formData.append('name', name);
-      formData.append('password', password);
-      formData.append('name_m', name);
-      formData.append('nim', nim);
-      formData.append('prodi', prodi);
-      formData.append('alamat', alamat);
-      formData.append('NOHP', NOHP);
-      formData.append('role', role);
 
       axios
-        .post("https://ecowatchk10.000webhostapp.com/api/register", formData,{headers: {
-                        'Content-Type': 'multipart/form-data'
-          }})
+<<<<<<< HEAD
+        .post("https://ecowatchk10.000webhostapp.com/api/register", {
+=======
+        .post("http://localhost:8000/api/register", {
+>>>>>>> origin/test
+          name: name,
+          password:password,
+          name_m:name,
+          nim: nim,
+          prodi: prodi,
+          alamat: alamat,
+          NOHP: NOHP,
+          role:role,
+        })
         .then(() => {
           router.push({
             name: "auth.Login",

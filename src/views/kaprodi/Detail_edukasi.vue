@@ -64,7 +64,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get(`https://ecowatchk10.000webhostapp.com/api/edukasi/${route.params.id}`)
+        .get(`http://127.0.0.1:8000/api/edukasi/${route.params.id}`)
         .then((response) => {
           edukasi.judul = response.data.data.judul;
           edukasi.isi = response.data.data.isi;
