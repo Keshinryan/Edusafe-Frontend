@@ -1,4 +1,5 @@
 <template>
+
   <div id="wrapper">
     <Navbar></Navbar>
     <div class="main">

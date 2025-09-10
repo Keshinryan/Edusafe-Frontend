@@ -50,7 +50,8 @@ export default {
   setup() {
     const pelaporanData = ref([]);
     const mahasiswaData = ref([]);
-
+    // This function fetches the list of pelaporan and mahasiswa from the API when the component is mounted
+    // and stores them in the pelaporanData and mahasiswaData variables, respectively.
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/pelaporan")
@@ -62,10 +63,12 @@ export default {
           console.log(error.response.data);
         });
     });
-
-    function getFileUrl(filename){
+    // This function constructs the URL for the file based on the filename passed to it.
+    function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/bukti`;
     }
+    // This computed property merges the pelaporan and mahasiswa data based on the id_m field.
+    // It creates a new array where each pelaporan object is combined with the corresponding mahasiswa object.
     const mergedData = computed(() => {
       return pelaporanData.value.map((pelaporan) => {
         const mahasiswa = mahasiswaData.value.find(

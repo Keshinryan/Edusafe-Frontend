@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <Navbar></Navbar>
   <div class="main">
@@ -61,19 +62,21 @@ export default {
 
     const validation = ref([]);
     const router = useRouter();
-
+    // This function fetches the details of a specific edukasi item from the API when the component is mounted
+    // and stores it in the `edukasi` reactive variable.
     onMounted(() => {
       axios
         .get(`http://127.0.0.1:8000/api/edukasi/${route.params.id}`)
         .then((response) => {
           edukasi.judul = response.data.data.judul;
           edukasi.isi = response.data.data.isi;
-          edukasi.foto = response.data.data.foto;
+          edukasi.foto = response.data.data.Foto;
         })
         .catch((error) => {
           console.log(error.response.data);
         });
     });
+    // This function constructs the URL for the file based on the filename passed as an argument
     function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/foto`;
     }

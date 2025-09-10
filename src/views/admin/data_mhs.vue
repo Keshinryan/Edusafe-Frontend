@@ -1,7 +1,8 @@
 <template>
+
   <body id="page-top">
-      <Navbar></Navbar>
-      <div class="main">
+    <Navbar></Navbar>
+    <div class="main">
       <div class="container-fluid">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
@@ -16,12 +17,7 @@
                 <button class="btn btn-sm btn-success">Tambah Data</button>
               </router-link>
               <hr />
-              <table
-                class="table table-bordered"
-                id="dataTable"
-                width="100%"
-                cellspacing="0"
-              >
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Nama Lengkap</th>
@@ -33,22 +29,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(mahasiswa,index) in mahasiswa" :key="index">
+                  <tr v-for="(mahasiswa, index) in mahasiswa" :key="index">
                     <td>{{ mahasiswa.name_m }}</td>
                     <td>{{ mahasiswa.nim }}</td>
                     <td>{{ mahasiswa.prodi }}</td>
                     <td>{{ mahasiswa.alamat }}</td>
                     <td>{{ mahasiswa.NOHP }}</td>
                     <td class="text-center">
-                      <router-link
-                        :to="{ name: 'edit_mhs', params: { id: mahasiswa.id} }"
-                        class="btn btn-sm btn-primary mr-1"
-                        >EDIT</router-link
-                      >
-                      <button
-                        @click.prevent="mahasiswaDelete(mahasiswa.id, index)"
-                        class="btn btn-sm btn-danger ml-1"
-                      >
+                      <router-link :to="{ name: 'edit_mhs', params: { id: mahasiswa.id } }"
+                        class="btn btn-sm btn-primary mr-1">EDIT</router-link>
+                      <button @click.prevent="mahasiswaDelete(mahasiswa.id, index)" class="btn btn-sm btn-danger ml-1">
                         DELETE
                       </button>
                     </td>
@@ -71,10 +61,10 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     let mahasiswa = ref([]);
-
+    // This function fetches the list of mahasiswa from the API when the component is mounted
     onMounted(() => {
       axios
-        .get("https://ecowatchk10.000webhostapp.com/api/mahasiswa")
+        .get("http://localhost:8000/api/mahasiswa")
         .then((response) => {
           mahasiswa.value = response.data.data;
         })
@@ -82,9 +72,10 @@ export default {
           console.log(error.response.data);
         });
     });
-    function mahasiswaDelete(id,index) {
+    // This function deletes a mahasiswa entry from the API and removes it from the local list
+    function mahasiswaDelete(id, index) {
       axios
-        .delete(`http://127.0.0.1:8000/api/mahasiswa/${id}`)
+        .delete(`http://localhost:8000/api/mahasiswa/${id}`)
         .then(() => {
           mahasiswa.value.splice(index, 1);
         })

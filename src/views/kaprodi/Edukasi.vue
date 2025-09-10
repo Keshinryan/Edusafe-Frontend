@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <Navbar></Navbar>
     <div class="main">
@@ -24,9 +25,9 @@
                   <div class="row">
                     <div class="col-lg-4">
                       <img
-                        :src="getFileUrl(edukasi.foto)"
+                        :src="getFileUrl(edukasi.Foto)"
                         alt=""
-                        v-if="edukasi.foto"
+                        v-if="edukasi.Foto"
                         style="height: 150px"
                       />
                     </div>
@@ -59,6 +60,7 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     const edukasi = ref([]);
+    // This function fetches the list of edukasi from the API when the component is mounted
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/edukasi")
@@ -69,6 +71,7 @@ export default {
           console.log(error.response.data);
         });
     });
+    // This function constructs the URL for the file based on the filename provided
     function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/foto`;
     }

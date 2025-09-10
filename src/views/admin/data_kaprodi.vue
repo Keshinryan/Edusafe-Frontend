@@ -69,7 +69,7 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     let kaprodi = ref([]);
-
+    // This function fetches the list of kaprodi from the API when the component is mounted
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/kaprodi")
@@ -80,7 +80,7 @@ export default {
           console.log(error.response.kaprodi);
         });
     });
-
+    // This function constructs the URL for the image file based on the filename
     function kaprodiDelete(id,index) {
       axios
         .delete(`http://127.0.0.1:8000/api/kaprodi/${id}`)

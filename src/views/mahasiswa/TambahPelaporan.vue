@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
         <Navbar></Navbar>
         <div class="main">
@@ -69,6 +70,8 @@ export default {
         user.value = JSON.parse(sessionStorage.getItem("user"));
         const validation = ref([]);
         const router = useRouter();
+        // Function to get get the user Data from the API
+        // and set it to the user object
         function store() {
             let tanggal = Pelaporan.tanggal;
             let waktu = Pelaporan.waktu;
@@ -97,6 +100,8 @@ export default {
                     validation.value = error.response.data;
                 });
         }
+        // Function to handle file upload
+        // and set the file to the bukti object
         function handleFileUpload(event) {
             Pelaporan.bukti = event.target.files[0];
         }

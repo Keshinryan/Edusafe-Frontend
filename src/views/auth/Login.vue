@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="container">
     <!-- Outer Row -->
@@ -65,7 +66,7 @@ export default {
       let name = Login.name;
       let password = Login.password;
       axios
-        .post("https://ecowatchk10.000webhostapp.com/api/login", {
+        .post("http://localhost:8000/api/login", {
           name: name,
           password: password,
         })

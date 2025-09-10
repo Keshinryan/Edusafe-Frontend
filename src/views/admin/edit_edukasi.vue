@@ -1,4 +1,5 @@
 <template>
+
   <body>
     <div id="wrapper">
       <Navbar></Navbar>
@@ -68,7 +69,8 @@ export default {
 
     const validation = ref([]);
     const router = useRouter();
-
+    // This function fetches the data of a specific edukasi based on the ID passed in the route parameters
+    // and populates the `edukasi` reactive variable with the fetched data.
     onMounted(() => {
       axios
         .get(`http://127.0.0.1:8000/api/edukasi/${route.params.id}`)
@@ -81,8 +83,10 @@ export default {
           console.log(error.response.data);
         });
     });
+
+    // This function is for update file function 
     function updateFile() {
-      let foto= edukasi.foto;
+      let foto = edukasi.foto;
       let formData = new FormData();
       formData.append("foto", foto);
       console.log(foto);
@@ -96,7 +100,7 @@ export default {
           validation.value = error.response.data;
         });
     }
-
+    // This function is for update data function 
     function update() {
       let judul = edukasi.judul;
       let isi = edukasi.isi;
@@ -118,7 +122,7 @@ export default {
         .catch((error) => {
           validation.value = error.response.data;
         });
-        this.updateFile();
+      this.updateFile();
     }
 
     function getFileUrl(filename) {

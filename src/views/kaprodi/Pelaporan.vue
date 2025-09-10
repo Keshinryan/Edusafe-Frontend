@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <Navbar></Navbar>
   <div class="main">
@@ -72,7 +73,8 @@ export default {
   setup() {
     const pelaporanData = ref([]);
     const mahasiswaData = ref([]);
-
+    // This function fetches the list of pelaporan and mahasiswa from the API when the component is mounted
+    // and stores them in the pelaporanData and mahasiswaData variables, respectively.
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/pelaporan")
@@ -86,6 +88,8 @@ export default {
     });
 
     const validation = ref([]);
+    // This Function updates the status of a pelaporan entry in the API and reloads the page to reflect the changes.
+    // It takes the bukti (proof) of the pelaporan as an argument, finds the corresponding id, and sends a PUT request to update the status.
     function update(bukti) {
       let status = "dalam proses";
       let idp = pelaporanData.value.find((item) => item.bukti === bukti).id;
@@ -100,6 +104,7 @@ export default {
           validation.value = error.response.data;
         });
     }
+    // This function constructs the URL for the file based on the filename passed to it.
     function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/bukti`;
     }

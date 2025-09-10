@@ -97,7 +97,7 @@ const routes = [
     meta: { requiresAuth: true, role: 'kaprodi' }
   },
   {
-    path: '/detail_edukasi',
+    path: '/detail_edukasi/:id',
     name: 'kaprodi.detail_edukasi',
     component: () => import('@/views/kaprodi/Detail_edukasi.vue'),
     meta: { requiresAuth: true, role: 'kaprodi' }
@@ -121,7 +121,7 @@ const routes = [
     component: () => import('@/views/mahasiswa/Edukasi.vue'),
   },
   {
-    path: '/detail_edukasi',
+    path: '/detail_edukasi/:id',
     name: 'mahasiswa.detail_edukasi',
     component: () => import('@/views/mahasiswa/Detail_edukasi.vue'),
 },
