@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable */
 <template>
 
@@ -5,6 +6,13 @@
     <Navbar></Navbar>
     <div class="main">
       <div class="container-fluid">
+=======
+<template>
+  <body id="page-top">
+      <Navbar></Navbar>
+      <div class="main">
+        <div class="container-fluid">
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         <div class="card shadow mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">
@@ -18,7 +26,16 @@
                 <button class="btn btn-sm btn-success">Tambah Data</button>
               </router-link>
               <hr />
+<<<<<<< HEAD
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+=======
+              <table
+                class="table table-bordered"
+                id="dataTable"
+                width="100%"
+                cellspacing="0"
+              >
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
                 <thead>
                   <tr>
                     <th>Judul</th>
@@ -28,6 +45,7 @@
                   </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                   <tr v-for="(edukasi, index) in edukasi" :key="index">
                     <td>{{ edukasi.judul }}</td>
                     <td>{{ edukasi.isi }}</td>
@@ -36,6 +54,22 @@
                       <router-link :to="{ name: 'edit_edukasi', params: { id: edukasi.id } }"
                         class="btn btn-sm btn-primary mr-1">EDIT</router-link>
                       <button @click.prevent="edukasiDelete(edukasi.id, index)" class="btn btn-sm btn-danger ml-1">
+=======
+                  <tr v-for="(edukasi,index) in edukasi" :key="index">
+                    <td>{{ edukasi.judul }}</td>
+                    <td>{{ edukasi.isi }}</td>
+                    <td><img :src="getFileUrl(edukasi.foto)" alt="" v-if="edukasi.foto" style="height: 300px; ;"></td>
+                    <td class="text-center">
+                      <router-link
+                        :to="{ name: 'edit_edukasi', params: { id: edukasi.id} }"
+                        class="btn btn-sm btn-primary mr-1"
+                        >EDIT</router-link
+                      >
+                      <button
+                        @click.prevent="edukasiDelete(edukasi.id, index)"
+                        class="btn btn-sm btn-danger ml-1"
+                      >
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
                         DELETE
                       </button>
                     </td>
@@ -58,11 +92,17 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     const edukasi = ref([]);
+<<<<<<< HEAD
     // This function fetches the list of edukasi from the API when the component is mounted
     // and stores it in the `edukasi` reactive variable.
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/edukasi")
+=======
+    onMounted(() => {
+      axios
+        .get("https://ecowatchk10.000webhostapp.com/api/edukasi")
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           edukasi.value = response.data.data;
         })
@@ -70,6 +110,7 @@ export default {
           console.log(error.response.data);
         });
     });
+<<<<<<< HEAD
     // This function constructs the URL for the image file based on the filename
     function getFileUrl(filename) { 
       return `http://127.0.0.1:8000/api/file/${filename}/foto`;
@@ -78,6 +119,14 @@ export default {
     function edukasiDelete(id, index) {
       axios
         .delete(`http://127.0.0.1:8000/api/edukasi/${id}`)
+=======
+    function getFileUrl(filename){
+      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/foto`;
+    }
+    function edukasiDelete(id,index) {
+      axios
+        .delete(`https://ecowatchk10.000webhostapp.com/api/edukasi/${id}`)
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then(() => {
           edukasi.value.splice(index, 1);
         })

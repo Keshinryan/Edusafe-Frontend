@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 <template>
         <Navbar></Navbar>
         <div class="main">
@@ -70,8 +73,11 @@ export default {
         user.value = JSON.parse(sessionStorage.getItem("user"));
         const validation = ref([]);
         const router = useRouter();
+<<<<<<< HEAD
         // Function to get get the user Data from the API
         // and set it to the user object
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         function store() {
             let tanggal = Pelaporan.tanggal;
             let waktu = Pelaporan.waktu;
@@ -86,7 +92,11 @@ export default {
             formData.append('bukti', bukti);
             formData.append('id_m', user.value.id);
             axios
+<<<<<<< HEAD
                 .post("http://localhost:8000/api/pelaporan", formData, {
+=======
+                .post("https://ecowatchk10.000webhostapp.com/api/pelaporan", formData, {
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -100,8 +110,11 @@ export default {
                     validation.value = error.response.data;
                 });
         }
+<<<<<<< HEAD
         // Function to handle file upload
         // and set the file to the bukti object
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         function handleFileUpload(event) {
             Pelaporan.bukti = event.target.files[0];
         }

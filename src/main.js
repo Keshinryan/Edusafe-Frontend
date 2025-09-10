@@ -18,4 +18,9 @@ const app = createApp(App)
 app.use(router);
 library.add(faUser,faUsers,faFlag,faNewspaper,faRightFromBracket,faRightToBracket);
 app.component('Navbar',Navbar);
+<<<<<<< HEAD
 app.mount("#app");
+=======
+app.mount("#app");
+
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac

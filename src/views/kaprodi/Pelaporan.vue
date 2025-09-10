@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 <template>
   <Navbar></Navbar>
   <div class="main">
@@ -73,11 +76,18 @@ export default {
   setup() {
     const pelaporanData = ref([]);
     const mahasiswaData = ref([]);
+<<<<<<< HEAD
     // This function fetches the list of pelaporan and mahasiswa from the API when the component is mounted
     // and stores them in the pelaporanData and mahasiswaData variables, respectively.
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/pelaporan")
+=======
+
+    onMounted(() => {
+      axios
+        .get("https://ecowatchk10.000webhostapp.com/api/pelaporan")
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           pelaporanData.value = response.data.data;
           mahasiswaData.value = response.data.mahasiswa;
@@ -88,13 +98,20 @@ export default {
     });
 
     const validation = ref([]);
+<<<<<<< HEAD
     // This Function updates the status of a pelaporan entry in the API and reloads the page to reflect the changes.
     // It takes the bukti (proof) of the pelaporan as an argument, finds the corresponding id, and sends a PUT request to update the status.
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
     function update(bukti) {
       let status = "dalam proses";
       let idp = pelaporanData.value.find((item) => item.bukti === bukti).id;
       axios
+<<<<<<< HEAD
         .put(`http://127.0.0.1:8000/api/pelaporan/${idp}`, {
+=======
+        .put(`https://ecowatchk10.000webhostapp.com/api/pelaporan/${idp}`, {
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
           status: status,
         })
         .then(() => {
@@ -104,9 +121,14 @@ export default {
           validation.value = error.response.data;
         });
     }
+<<<<<<< HEAD
     // This function constructs the URL for the file based on the filename passed to it.
     function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/bukti`;
+=======
+    function getFileUrl(filename) {
+      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/bukti`;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
     }
     const mergedData = computed(() => {
       return pelaporanData.value.map((pelaporan) => {

@@ -69,10 +69,17 @@ import { onMounted, ref } from "vue";
 export default {
   setup() {
     let kaprodi = ref([]);
+<<<<<<< HEAD
     // This function fetches the list of kaprodi from the API when the component is mounted
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/kaprodi")
+=======
+
+    onMounted(() => {
+      axios
+        .get("https://ecowatchk10.000webhostapp.com/api/kaprodi")
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           kaprodi.value = response.data.kaprodi;
         })
@@ -80,10 +87,17 @@ export default {
           console.log(error.response.kaprodi);
         });
     });
+<<<<<<< HEAD
     // This function constructs the URL for the image file based on the filename
     function kaprodiDelete(id,index) {
       axios
         .delete(`http://127.0.0.1:8000/api/kaprodi/${id}`)
+=======
+
+    function kaprodiDelete(id,index) {
+      axios
+        .delete(`https://ecowatchk10.000webhostapp.com/api/kaprodi/${id}`)
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then(() => {
           kaprodi.value.splice(index, 1);
         })

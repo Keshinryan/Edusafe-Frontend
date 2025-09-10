@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <Navbar></Navbar>
   <div class="main">
     <div class="container-fluid">
@@ -56,12 +57,104 @@
                   Simpan Perubahan
                 </button>
               </form>
+=======
+      <Navbar></Navbar>
+      <div class="main">
+      <div class="container-fluid">
+        <h1 class="h3 mb-4 text-gray-800">Data Kaprodi</h1>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header justify-content-center">
+                Form Edit Data Kaprodi
+              </div>
+              <div class="card-body">
+                <form @submit.prevent="update">
+                  <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      v-model="kaprodi.name"
+                      placeholder="Nama Kaprodi"
+                    />
+                    <div v-if="validation.name" class="mt-2 alert alert-danger">
+                      {{ validation.name[0] }}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="nama">Password</label>
+                    <input
+                      type="password"
+                      name="name"
+                      class="form-control"
+                      v-model="kaprodi.password"
+                      placeholder="password"
+                    />
+                    <div v-if="validation.password" class="mt-2 alert alert-danger">
+                      {{ validation.password[0] }}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="nip">NIP</label>
+                    <input
+                      type="text"
+                      name="nip"
+                      class="form-control"
+                      v-model="kaprodi.nip"
+                      placeholder="NIP Kaprodi"
+                    />
+                    <div v-if="validation.nip" class="mt-2 alert alert-danger">
+                      {{ validation.nip[0] }}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="prodi">Prodi</label>
+                    <input
+                      type="text"
+                      name="prodi"
+                      class="form-control"
+                      v-model="kaprodi.prodi"
+                      placeholder="Prodi Kaprodi"
+                    />
+                    <div
+                      v-if="validation.prodi"
+                      class="mt-2 alert alert-danger"
+                    >
+                      {{ validation.prodi[0] }}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="NOHP">No HP</label>
+                    <input
+                      type="text"
+                      name="NOHP"
+                      class="form-control"
+                      v-model="kaprodi.NOHP"
+                      placeholder="No HP Kaprodi"
+                    />
+                    <div v-if="validation.NOHP" class="mt-2 alert alert-danger">
+                      {{ validation.NOHP[0] }}
+                    </div>
+                  </div>
+                  
+                  <router-link :to="{ name: 'data_kaprodi' }"  class="btn btn-danger" >Tutup</router-link>
+                  <button type="submit" name="tambah" class="btn btn-primary float-right">
+                    Simpan Perubahan
+                  </button>
+                </form>
+              </div>
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
             </div>
           </div>
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 </template>
 
 <script>
@@ -73,7 +166,11 @@ export default {
   setup() {
     const kaprodi = reactive({
       name: "",
+<<<<<<< HEAD
       password: "",
+=======
+      password:"",
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
       nip: "",
       prodi: "",
       NOHP: "",
@@ -83,11 +180,18 @@ export default {
 
     const validation = ref([]);
     const router = useRouter();
+<<<<<<< HEAD
     // This function fetches the list of mahasiswa from the API when the component is mounted
     // and populates the `mahasiswa` reactive variable with the fetched data.
     onMounted(() => {
       axios
         .get(`http://127.0.0.1:8000/api/kaprodi/${route.params.id}`)
+=======
+
+    onMounted(() => {
+      axios
+        .get(`https://ecowatchk10.000webhostapp.com/api/kaprodi/${route.params.id}`)
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           kaprodi.name = response.data.data.name_k;
           kaprodi.nip = response.data.data.nip;
@@ -98,16 +202,27 @@ export default {
           console.log(error.response.data);
         });
     });
+<<<<<<< HEAD
     // This function updates the kaprodi data in the API and redirects to the data_kaprodi page
     // after a successful update.
     function update() {
       let name = kaprodi.name;
       let password = kaprodi.password;
+=======
+
+    function update() {
+      let name = kaprodi.name;
+      let password =kaprodi.password;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
       let nip = kaprodi.nip;
       let prodi = kaprodi.prodi;
       let NOHP = kaprodi.NOHP;
       axios
+<<<<<<< HEAD
         .put(`http://127.0.0.1:8000/api/kaprodi/${route.params.id}`, {
+=======
+        .put(`https://ecowatchk10.000webhostapp.com/api/kaprodi/${route.params.id}`, {
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
           name_k: name,
           password: password,
           nip: nip,

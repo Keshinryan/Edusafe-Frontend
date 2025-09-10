@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 <template>
   <div class="container">
     <!-- Outer Row -->
@@ -65,11 +68,21 @@ export default {
     function Auth() {
       let name = Login.name;
       let password = Login.password;
+<<<<<<< HEAD
       axios
         .post("http://localhost:8000/api/login", {
           name: name,
           password: password,
         })
+=======
+      let formData = new FormData();
+      formData.append('name', name);
+      formData.append('password', password);
+      axios
+        .post("https://ecowatchk10.000webhostapp.com/api/login", formData,{headers: {
+                        'Content-Type': 'multipart/form-data'
+          }})
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           if (response.data.data) {
             sessionStorage.setItem("user", JSON.stringify(response.data.data));

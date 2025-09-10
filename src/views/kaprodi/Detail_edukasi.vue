@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 <template>
   <Navbar></Navbar>
   <div class="main">
@@ -62,6 +65,7 @@ export default {
 
     const validation = ref([]);
     const router = useRouter();
+<<<<<<< HEAD
     // This function fetches the edukasi details from the API when the component is mounted
     // and stores it in the `edukasi` reactive variable.
     onMounted(() => {
@@ -71,13 +75,27 @@ export default {
           edukasi.judul = response.data.data.judul;
           edukasi.isi = response.data.data.isi;
           edukasi.foto = response.data.data.Foto;
+=======
+
+    onMounted(() => {
+      axios
+        .get(`https://ecowatchk10.000webhostapp.com/api/edukasi/${route.params.id}`)
+        .then((response) => {
+          edukasi.judul = response.data.data.judul;
+          edukasi.isi = response.data.data.isi;
+          edukasi.foto = response.data.data.foto;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         })
         .catch((error) => {
           console.log(error.response.data);
         });
     });
     function getFileUrl(filename) {
+<<<<<<< HEAD
       return `http://127.0.0.1:8000/api/file/${filename}/foto`;
+=======
+      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/foto`;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
     }
 
     return {

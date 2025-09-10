@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 <template>
   <div class="container">
     <center>
@@ -140,7 +143,11 @@ export default {
       let role= Register.role;
 
       axios
+<<<<<<< HEAD
         .post("http://localhost:8000/api/register", {
+=======
+        .post("https://ecowatchk10.000webhostapp.com/api/register", {
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
           name: name,
           password:password,
           name_m:name,

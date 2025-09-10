@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable */
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
 <template>
   <Navbar></Navbar>
   <div class="main">
@@ -25,9 +28,15 @@
                   <div class="row">
                     <div class="col-lg-4">
                       <img
+<<<<<<< HEAD
                         :src="getFileUrl(edukasi.Foto)"
                         alt=""
                         v-if="edukasi.Foto"
+=======
+                        :src="getFileUrl(edukasi.foto)"
+                        alt=""
+                        v-if="edukasi.foto"
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
                         style="height: 150px"
                       />
                     </div>
@@ -58,6 +67,7 @@ import axios from "axios";
 import { onMounted, ref } from "vue";
 
 export default {
+<<<<<<< HEAD
   data() {
     return {
       fruits: ['apple', 'banana', 'cherry']
@@ -69,6 +79,13 @@ export default {
     onMounted(() => {
       axios
         .get("http://127.0.0.1:8000/api/edukasi")
+=======
+  setup() {
+    const edukasi = ref([]);
+    onMounted(() => {
+      axios
+        .get("https://ecowatchk10.000webhostapp.com/api/edukasi")
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           edukasi.value = response.data.data;
         })
@@ -76,10 +93,15 @@ export default {
           console.log(error.response.data);
         });
     });
+<<<<<<< HEAD
     // This function constructs the URL for the image file based on the filename
     // provided, allowing the image to be displayed in the component.
     function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/foto`;
+=======
+    function getFileUrl(filename) {
+      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/foto`;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
     }
 
     return {

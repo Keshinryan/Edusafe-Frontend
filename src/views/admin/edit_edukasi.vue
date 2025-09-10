@@ -1,5 +1,8 @@
 <template>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
   <body>
     <div id="wrapper">
       <Navbar></Navbar>
@@ -69,11 +72,18 @@ export default {
 
     const validation = ref([]);
     const router = useRouter();
+<<<<<<< HEAD
     // This function fetches the data of a specific edukasi based on the ID passed in the route parameters
     // and populates the `edukasi` reactive variable with the fetched data.
     onMounted(() => {
       axios
         .get(`http://127.0.0.1:8000/api/edukasi/${route.params.id}`)
+=======
+
+    onMounted(() => {
+      axios
+        .get(`https://ecowatchk10.000webhostapp.com/api/edukasi/${route.params.id}`)
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
         .then((response) => {
           edukasi.judul = response.data.data.judul;
           edukasi.isi = response.data.data.isi;
@@ -83,15 +93,24 @@ export default {
           console.log(error.response.data);
         });
     });
+<<<<<<< HEAD
 
     // This function is for update file function 
     function updateFile() {
       let foto = edukasi.foto;
+=======
+    function updateFile() {
+      let foto= edukasi.foto;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
       let formData = new FormData();
       formData.append("foto", foto);
       console.log(foto);
       axios
+<<<<<<< HEAD
         .post(`http://localhost:8000/api/file/${route.params.id}`, formData, {
+=======
+        .post(`https://ecowatchk10.000webhostapp.com/api/file/${route.params.id}`, formData, {
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -100,7 +119,11 @@ export default {
           validation.value = error.response.data;
         });
     }
+<<<<<<< HEAD
     // This function is for update data function 
+=======
+
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
     function update() {
       let judul = edukasi.judul;
       let isi = edukasi.isi;
@@ -109,7 +132,11 @@ export default {
       formData.append("isi", isi);
 
       axios
+<<<<<<< HEAD
         .put(`http://127.0.0.1:8000/api/edukasi/${route.params.id}`, formData.toString(), {
+=======
+        .put(`https://ecowatchk10.000webhostapp.com/api/edukasi/${route.params.id}`, formData.toString(), {
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
@@ -122,11 +149,19 @@ export default {
         .catch((error) => {
           validation.value = error.response.data;
         });
+<<<<<<< HEAD
       this.updateFile();
     }
 
     function getFileUrl(filename) {
       return `http://127.0.0.1:8000/api/file/${filename}/foto`;
+=======
+        this.updateFile();
+    }
+
+    function getFileUrl(filename) {
+      return `https://ecowatchk10.000webhostapp.com/api/file/${filename}/foto`;
+>>>>>>> 1208a6d3b95664f7782678cbe7e1594bfe8e05ac
     }
     function handleFileUpload(event) {
       edukasi.foto = event.target.files[0];
